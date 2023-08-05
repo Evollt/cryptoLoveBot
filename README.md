@@ -12,3 +12,5 @@ tsc
 npm run build # Компилит проект
 npm run dev # Запускаяет проект
 ```
+
+> Ссылка на бота, привязанного к данному токену ** https://t.me/NodeJsTeambot **
