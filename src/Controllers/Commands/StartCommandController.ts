@@ -2,7 +2,7 @@ import { Controller } from "../../Base/Controller";
 import { AuthMiddleware } from "../../Middlewares/AuthMiddleware";
 import path from "path";
 import TelegramBot from "node-telegram-bot-api";
-import { Keyboards } from "../../Base/Keyboard";
+import { Keyboard } from "../../Base/Keyboard";
 import { Bot, CommandContext, Context, InlineKeyboard, InputFile } from "grammy";
 import { MyContext } from "../../Types/ConversationTypes";
 
@@ -30,28 +30,9 @@ export class StartCommandController extends Controller {
       {
         caption: '🏮 Тебя приветсвует команда CryptoLove!\n\nПомни, что заявку можно подавать 1 раз, составь её корректно!',
         reply_markup: {
-          inline_keyboard: Keyboards.sendRequest()
+          inline_keyboard: Keyboard.sendRequest()
         }
       }
     )
-
-
   }
 }
-
-
-// // для зарегистрированных пользователей
-// userAlreadyAuthorized() {
-//   this.bot.sendPhoto(
-//   )
-// }
-
-// // для новых пользователей
-// userNotAuthorized() {
-//   this.bot.sendPhoto(
-//     this.msg.chat.id,
-//     path.resolve(__dirname, '../../../assets/img/logo.jpg'),
-//     {
-//     }
-//   )
-// }

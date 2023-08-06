@@ -30,6 +30,9 @@ bot.use(createConversation(new UserController().createUser));
 // команды и слушатели событий
 bot.command("start", (ctx) => new StartCommandController(bot, ctx).start());
 bot.callbackQuery('send_request', async ctx => { await ctx.conversation.enter("createUser"); })
+bot.callbackQuery('give_anket', async ctx => {
+  console.log('user saved');
+})
 
 
 // запуск бота

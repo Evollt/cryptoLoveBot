@@ -1,6 +1,6 @@
 import TelegramBot from "node-telegram-bot-api";
 
-export class Keyboards {
+export class Keyboard {
   constructor() { }
 
   static sendRequest() {
@@ -9,6 +9,21 @@ export class Keyboards {
         {
           text: 'Подать заявку',
           callback_data: 'send_request'
+        }
+      ],
+    ]
+  }
+
+  static chooseAnket() {
+    return [
+      [
+        {
+          text: 'Попробовать снова',
+          callback_data: 'send_request'
+        },
+        {
+          text: 'Продолжить',
+          callback_data: 'give_anket'
         }
       ],
     ]
