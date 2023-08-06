@@ -15,6 +15,7 @@ export class FilialsTable {
       ownerProcent INT
       visibility INT
     )`);
+
   }
 
   static dropTable(db: Database) {

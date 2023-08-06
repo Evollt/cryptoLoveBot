@@ -1,4 +1,4 @@
-import { Database } from "../Database";
+import { Database } from "../../Base/Database";
 import { UserFactory } from "../factory/UserFactory";
 
 export class DatabaseSeeder extends Database {
@@ -23,5 +23,23 @@ export class DatabaseSeeder extends Database {
         ban: false,
       }
     )
+
+    UserFactory.createUser(
+      this.db,
+      {
+        name: 'Армен',
+        role: 'admin',
+        userId: '275376807',
+        userName: 'Армен',
+        status: 'worker',
+        sumWork: 340000.0,
+        teacherId: '0',
+        procent: 100,
+        createdAt: 4,
+        ban: false,
+      }
+    )
+
+    return 'Столбцы успешно созданы)'
   }
 }
