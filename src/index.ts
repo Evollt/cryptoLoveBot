@@ -10,6 +10,7 @@ import {
 } from "@grammyjs/conversations";
 import { MyContext } from './Types/ConversationTypes';
 import { UserController } from './Controllers/UserController';
+import { Keyboard } from './Base/Keyboard';
 
 // инициализация бота
 const bot: Bot<MyContext> = new Bot<MyContext>(process.env.TOKEN || '');
@@ -21,17 +22,19 @@ bot.api.setMyCommands([
 ])
 
 // дополнительные плагины
-bot.use(session({ initial: () => ({}) }));
-bot.use(conversations());
+// bot.use(conversations());
 // не Удалять!!! Нужно для диалогов
-bot.use(createConversation(new UserController().createUser));
+// bot.use(createConversation(new UserController().createUser));
 
 
+//await ctx.conversation.enter("createUser");
 // команды и слушатели событий
 bot.command("start", (ctx) => new StartCommandController(bot, ctx).start());
-bot.callbackQuery('send_request', async ctx => { await ctx.conversation.enter("createUser"); })
+bot.callbackQuery('send_request', async ctx => { })
 bot.callbackQuery('give_anket', async ctx => {
   console.log('user saved');
+  console.log(Keyboard.description);
+
 })
 
 

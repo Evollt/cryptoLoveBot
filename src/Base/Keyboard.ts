@@ -1,6 +1,7 @@
 import TelegramBot from "node-telegram-bot-api";
 
 export class Keyboard {
+  static description: string | undefined = '';
   constructor() { }
 
   static sendRequest() {
